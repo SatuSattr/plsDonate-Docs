@@ -1,0 +1,34 @@
+/* Custom styles based on plsDonate logo color palette */
+
+:root {
+  /* Using standard HSL format for the deep red background from the logo */
+  --nextra-primary-hue: 355deg;
+}
+
+/* Enhancing navigation and accent elements with the gold/yellow from the ribbon */
+.nextra-nav-container a:hover {
+  color: #FAD386;
+}
+
+/* Add custom gold styling for important buttons or callouts */
+.gold-button {
+  background-color: #FAD386;
+  color: #8C181C;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.logo-text {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Custom NProgress styling - Matches plsDonate Red */
+#nprogress .bar {
+  background: #8C181C !important;
+  height: 3px !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #8C181C, 0 0 5px #8C181C !important;
+}
