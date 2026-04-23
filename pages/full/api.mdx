@@ -1,0 +1,47 @@
+# API Reference
+
+import { Callout } from 'nextra/components'
+
+<Callout type="warning">
+  plsDonate Full is currently under development. The API is not yet finalized.
+</Callout>
+
+## Maven / Gradle
+
+Add the dependency to your project *(repository details coming soon)*:
+
+```xml
+<!-- Maven -->
+<dependency>
+  <groupId>dev.satusattr</groupId>
+  <artifactId>plsdonate</artifactId>
+  <version>LATEST</version>
+  <scope>provided</scope>
+</dependency>
+```
+
+```groovy
+// Gradle
+compileOnly 'dev.satusattr:plsdonate:LATEST'
+```
+
+## Events
+
+| Event | Description |
+|---|---|
+| `DonationReceivedEvent` | Fired when a donation is successfully processed |
+| `DonationCommandEvent` | Fired when a player uses the `/donate` command |
+| `RewardTierReachedEvent` | Fired when a player reaches a donation reward tier |
+| `GatewayResponseEvent` | Fired when a payment gateway returns a response |
+
+## Usage Example
+
+```java
+@EventHandler
+public void onDonation(DonationReceivedEvent event) {
+    Player player = event.getPlayer();
+    double amount = event.getAmount();
+    String tier = event.getRewardTier(); // null if no tier reached
+    player.sendMessage("Thanks for donating $" + amount + "!");
+}
+```

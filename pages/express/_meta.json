@@ -1,0 +1,10 @@
+{
+  "index": {
+    "title": "Overview",
+    "display": "hidden"
+  },
+  "getting-started": "Getting Started",
+  "configuration": "Configuration",
+  "commands": "Commands & Permissions",
+  "api": "API Reference"
+}

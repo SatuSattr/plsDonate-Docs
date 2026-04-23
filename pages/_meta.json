@@ -1,6 +1,5 @@
 {
   "index": "Introduction",
-  "setup": "Installation & Setup",
-  "configuration": "Configuration",
-  "commands": "Commands & Permissions"
+  "express": "plsDonate Express",
+  "full": "plsDonate"
 }

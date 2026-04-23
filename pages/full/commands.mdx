@@ -1,0 +1,38 @@
+# Commands & Permissions
+
+import { Callout } from 'nextra/components'
+
+<Callout type="warning">
+  plsDonate Full is currently under development. Commands may change before release.
+</Callout>
+
+## Player Commands
+
+| Command | Description | Permission |
+|---|---|---|
+| `/donate <amount>` | Donate to the server | `plsdonate.donate` |
+| `/donate gui` | Open donation GUI | `plsdonate.donate.gui` |
+| `/donate history` | View your donation history | `plsdonate.donate.history` |
+| `/donate help` | Show help menu | `plsdonate.donate` |
+
+## Admin Commands
+
+| Command | Description | Permission |
+|---|---|---|
+| `/plsdonateadmin reload` | Reload the plugin config | `plsdonate.admin.reload` |
+| `/plsdonateadmin list` | View recent donations | `plsdonate.admin.list` |
+| `/plsdonateadmin reward <player>` | Manually trigger a reward | `plsdonate.admin.reward` |
+| `/plsdonateadmin stats` | View donation statistics | `plsdonate.admin.stats` |
+
+## Permissions
+
+| Permission | Description | Default |
+|---|---|---|
+| `plsdonate.donate` | Allow player to use donate command | `true` |
+| `plsdonate.donate.gui` | Allow player to open donation GUI | `true` |
+| `plsdonate.donate.history` | Allow player to view history | `true` |
+| `plsdonate.admin` | Access to all admin commands | `op` |
+| `plsdonate.admin.reload` | Reload plugin config | `op` |
+| `plsdonate.admin.list` | View donation history | `op` |
+| `plsdonate.admin.reward` | Manually trigger rewards | `op` |
+| `plsdonate.admin.stats` | View donation stats | `op` |

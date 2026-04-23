@@ -1,0 +1,41 @@
+# Getting Started
+
+import { Steps, Callout } from 'nextra/components'
+
+<Callout type="warning">
+  plsDonate Full is currently under development. Installation instructions will be updated upon release.
+</Callout>
+
+Welcome! This guide will walk you through installing and setting up **plsDonate** on your PaperMC server.
+
+## Requirements
+
+- PaperMC **1.19+**
+- Java **17+**
+- Server with operator/admin access
+
+## Installation
+
+<Steps>
+
+### Download the Plugin
+
+Download the latest `plsDonate.jar` from [GitHub Releases](https://github.com/satusattr/plsDonate) once available.
+
+### Place in Plugins Folder
+
+Copy the `.jar` file into your server's `/plugins` directory.
+
+### Start the Server
+
+Start (or restart) your server. plsDonate will generate its configuration files automatically.
+
+### Configure the Plugin
+
+Edit the generated `config.yml` in `/plugins/plsDonate/`. See the [Configuration](/full/configuration) page for all available options.
+
+### Reload
+
+Run `/plugman reload plsDonate` or restart the server to apply your changes.
+
+</Steps>

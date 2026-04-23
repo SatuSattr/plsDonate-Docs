@@ -1,0 +1,18 @@
+{
+  "index": "Coming Soon!!",
+  "getting-started": {
+    "display": "hidden"
+  },
+  "configuration": {
+    "display": "hidden"
+  },
+  "commands": {
+    "display": "hidden"
+  },
+  "api": {
+    "display": "hidden"
+  },
+  "migration": {
+    "display": "hidden"
+  }
+}

@@ -1,0 +1,54 @@
+# Migrating from Express
+
+import { Callout, Steps } from 'nextra/components'
+
+<Callout type="warning">
+  plsDonate Full is currently under development. This migration guide will be finalized upon release.
+</Callout>
+
+If you're currently running **plsDonate Express** and want to upgrade to the full version, this guide covers everything you need to know.
+
+## What Changes
+
+| Aspect | Express | plsDonate Full |
+|---|---|---|
+| Config file location | `/plugins/plsDonate-Express/` | `/plugins/plsDonate/` |
+| Database schema | Basic | Extended (auto-migrated) |
+| Commands | `/donate` | `/donate` *(same, expanded)* |
+| Permissions | Basic set | Extended set |
+
+## Migration Steps
+
+<Steps>
+
+### Backup Your Data
+
+Before anything, **back up your server** — especially the `/plugins/plsDonate-Express/` folder and your database.
+
+### Install plsDonate Full
+
+Download and place `plsDonate.jar` in your `/plugins` folder. Do **not** remove Express yet.
+
+### Run Migration Command
+
+Start the server with both plugins, then run:
+
+```
+/plsdonateadmin migrate
+```
+
+This will automatically copy your existing donations and player data to the new format.
+
+### Verify Data
+
+Check that your donation history is intact:
+
+```
+/plsdonateadmin list
+```
+
+### Remove plsDonate Express
+
+Once verified, remove `plsDonate-Express.jar` from your `/plugins` folder and restart.
+
+</Steps>

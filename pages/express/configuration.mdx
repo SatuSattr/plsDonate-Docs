@@ -1,0 +1,38 @@
+# Configuration
+
+import { Callout } from 'nextra/components'
+
+After installing plsDonate Express and starting your server, a `config.yml` file will be generated at:
+
+```
+/plugins/plsDonate-Express/config.yml
+```
+
+## config.yml
+
+```yaml
+# plsDonate Express Configuration
+
+# General Settings
+plugin:
+  prefix: "&c[plsDonate]&r"
+  language: "en"
+
+# Database Settings
+database:
+  type: "sqlite" # sqlite or mysql
+  host: "localhost"
+  port: 3306
+  name: "plsdonate"
+  username: "root"
+  password: ""
+
+# Donation Settings
+donation:
+  currency: "USD"
+  minimum: 1.00
+```
+
+<Callout type="info">
+  Full configuration reference with all available options will be added here. Fill in details based on your plugin's actual config options.
+</Callout>

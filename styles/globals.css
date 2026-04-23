@@ -5,18 +5,74 @@
   --nextra-primary-hue: 355deg;
 }
 
-/* Enhancing navigation and accent elements with the gold/yellow from the ribbon */
+/* Force sharp edges on EVERYTHING */
+* {
+  border-radius: 0 !important;
+}
+
+/* Enhancing navigation and accent elements */
 .nextra-nav-container a:hover {
-  color: #FAD386;
+  color: #ffffff;
+}
+
+/* Active sidebar page styling */
+.nextra-sidebar-container a.active {
+  color: #ff0000 !important; /* Bright red for visibility */
+  background-color: rgba(140, 24, 28, 0.15) !important;
+  outline: 1px solid #8C181C !important;
+  font-weight: 600;
+}
+
+/* Prevent logo area from having any hover effects on text */
+.logo-container, 
+.logo-container *,
+a:has(.logo-container):hover,
+a:has(.logo-container):hover * {
+  color: inherit !important;
+  opacity: 1 !important;
+  background: none !important;
+  text-decoration: none !important;
+}
+
+/* Micro-animation for the logo image */
+.logo-container img {
+  transition: transform 0.2s ease-in;
+}
+
+.logo-container:hover img,
+a:has(.logo-container):hover img {
+  transform: translateY(-3px);
+}
+
+/* Reorder navbar items: Search (0) -> Theme Switch (5) -> GitHub Link (10) */
+.nextra-nav-container nav {
+  display: flex;
+}
+
+.custom-theme-switch {
+  order: 5;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.custom-theme-switch:hover {
+  background-color: rgba(140, 24, 28, 0.1) !important;
+}
+
+:root[class~="dark"] .custom-theme-switch:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.nextra-nav-container nav > a[href*="github.com"] {
+  order: 10;
 }
 
 /* Add custom gold styling for important buttons or callouts */
 .gold-button {
-  background-color: #FAD386;
+  background-color: #ffc10f;
   color: #8C181C;
   font-weight: bold;
   padding: 8px 16px;
-  border-radius: 4px;
 }
 
 .logo-text {
@@ -31,4 +87,68 @@
 
 #nprogress .peg {
   box-shadow: 0 0 10px #8C181C, 0 0 5px #8C181C !important;
+}
+
+/* 404 Page Styles */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1rem;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.error-icon {
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+  background: linear-gradient(135deg, #8C181C, #C0392B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:root[class~="dark"] .error-code {
+  background: linear-gradient(135deg, #ffc10f, #f0a000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.error-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.error-description {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  margin: 0.5rem 0 2rem;
+  line-height: 1.6;
+}
+
+.error-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  transition: transform 0.2s ease-in;
+  text-decoration: none !important;
+}
+
+.error-button:hover {
+  transform: translateY(-2px);
 }
