@@ -2,7 +2,7 @@
 
 Official documentation for the **plsDonate** Minecraft PaperMC plugin suite. This website provides detailed guides for both **plsDonate Express** (Lite) and the upcoming **plsDonate Full** version.
 
-![plsDonate Banner](./public/banner.png)
+![plsDonate Banner](./public/banner-thin.png)
 
 ## 🚀 Features
 
