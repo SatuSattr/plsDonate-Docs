@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
   }, [])
 
   return (
-    <div className={poppins.variable}>
+    <div className={`${poppins.variable}`}>
       <Component {...pageProps} />
     </div>
   )

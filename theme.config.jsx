@@ -1,6 +1,10 @@
 import { useTheme } from 'next-themes'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { Sun, Moon, Monitor } from 'lucide-react'
+import { 
+  Sun, Moon, Monitor, Book, Rocket, Settings, 
+  Terminal, Code, FileText 
+} from 'lucide-react'
 
 function CustomThemeSwitch() {
   const { theme, setTheme } = useTheme()
@@ -8,7 +12,7 @@ function CustomThemeSwitch() {
 
   useEffect(() => setMounted(true), [])
 
-  if (!mounted) return <div className="custom-theme-switch" style={{ width: 36, height: 36 }} />
+  if (!mounted) return null
 
   const cycleTheme = () => {
     if (theme === 'system') setTheme('dark')
@@ -44,6 +48,14 @@ function CustomThemeSwitch() {
   )
 }
 
+const iconMap = {
+  '/': <Book size={18} />,
+  '/getting-started': <Rocket size={18} />,
+  '/configuration': <Settings size={18} />,
+  '/commands': <Terminal size={18} />,
+  '/api': <Code size={18} />,
+}
+
 export default {
   logo: (
     <div className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -64,6 +76,39 @@ export default {
   navbar: {
     extraContent: <CustomThemeSwitch />,
   },
+  sidebar: {
+    titleComponent({ title, route, active }) {
+      const icon = iconMap[route] || <FileText size={18} />
+      
+      return (
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <span style={{ 
+            color: active ? '#666666' : '#888888',
+            transition: 'all 0.3s ease',
+            display: 'flex',
+            alignItems: 'center',
+            transform: active ? 'scale(1.1)' : 'scale(1)',
+            opacity: active ? 1 : 0.7
+          }}>
+            {icon}
+          </span>
+          <span style={{ 
+            fontWeight: active ? 600 : 400 
+          }}>
+            {title}
+          </span>
+        </div>
+      )
+    },
+    defaultMenuCollapseLevel: 1,
+    toggleButton: true
+  },
+  breadcrumb: false,
+  main: ({ children }) => (
+    <>
+      {children}
+    </>
+  ),
   themeSwitch: {
     component: null, // Disable default sidebar theme switch
   },
@@ -79,15 +124,7 @@ export default {
     </>
   ),
   footer: {
-    text: (
-      <span>
-        {new Date().getFullYear()} ©{' '}
-        <a href="https://github.com/satusattr/plsDonate" target="_blank">
-          plsDonate Documentation
-        </a>
-        .
-      </span>
-    )
+    component: null
   },
-  primaryHue: 355,
+  primaryHue: 0,
 }

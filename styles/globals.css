@@ -1,27 +1,178 @@
 /* Custom styles based on plsDonate logo color palette */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
 
 :root {
-  /* Using standard HSL format for the deep red background from the logo */
-  --nextra-primary-hue: 355deg;
+  /* Truly neutral gray theme */
+  --nextra-primary-hue: 0deg;
+  --nextra-primary-saturation: 0% !important;
+  --font-geist-sans: "Geist", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+
+  font-family: var(--font-geist-sans);
+  font-optical-sizing: auto;
 }
 
-/* Force sharp edges on EVERYTHING */
-* {
-  border-radius: 0 !important;
+pre, code, kbd, samp {
+  font-family: var(--font-geist-mono) !important;
+  font-optical-sizing: auto;
+}
+
+
+/* Modern rounded corners for components */
+.nextra-cards *,
+.nextra-callout,
+.nx-bg-primary-100\/5,
+.nx-bg-primary-100\/10,
+pre,
+code:not(.nx-inline-code),
+.nx-border-neutral-200,
+.nx-border-neutral-800,
+.nx-shadow-sm,
+.nx-shadow-md,
+.nx-shadow-lg,
+input, 
+button, 
+select, 
+textarea {
+  border-radius: 12px !important;
+}
+
+/* Formal Code Block Styling */
+:root {
+  --code-bg: #f3f4f6; /* Light gray for light mode */
+}
+
+:root[class~="dark"] {
+  --code-bg: #181818; /* Deep neutral for dark mode */
+}
+
+pre {
+  background-color: var(--code-bg) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+:root[class~="dark"] pre {
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Ensure the code tag inside pre doesn't add its own background/border */
+pre code {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Inline code styling */
+.nx-inline-code {
+  background-color: var(--code-bg) !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 6px !important;
+}
+
+:root[class~="dark"] .nx-inline-code {
+  color: #ffc10f !important; /* Gold text for inline code in dark mode */
+}
+
+/* Sidebar Container Styling with Outline */
+.nextra-sidebar-container {
+  border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[class~="dark"] .nextra-sidebar-container {
+  border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Right Sidebar (TOC) Styling with Outline */
+.nextra-toc {
+  border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[class~="dark"] .nextra-toc {
+  border-left: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Specific overrides for sidebar items */
+.nextra-sidebar-container a {
+  border-radius: 10px !important;
+  margin: 2px 4px !important;
+}
+
+/* Navbar should stay sharp at top edges but rounded for the container if needed */
+.nextra-nav-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:root[class~="dark"] .nextra-nav-container {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Enhancing navigation and accent elements */
 .nextra-nav-container a:hover {
-  color: #ffffff;
+  opacity: 0.7 !important;
+  color: inherit !important;
+}
+
+/* Hyperlinks Styling */
+.nx-text-primary-600 {
+  color: #666666 !important; /* Neutral gray for links */
+  text-decoration-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+:root[class~="dark"] .nx-text-primary-600 {
+  color: #aaaaaa !important;
+  text-decoration-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.nx-text-primary-600:hover {
+  color: #111111 !important;
+  text-decoration: underline !important;
+}
+
+:root[class~="dark"] .nx-text-primary-600:hover {
+  color: #ffffff !important;
 }
 
 /* Active sidebar page styling */
 .nextra-sidebar-container a.active {
-  color: #ff0000 !important; /* Bright red for visibility */
-  background-color: rgba(140, 24, 28, 0.15) !important;
-  outline: 1px solid #8C181C !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: #111111 !important;
   font-weight: 600;
 }
+
+:root[class~="dark"] .nextra-sidebar-container a.active {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+}
+
+/* Table of Contents (Right Sidebar) Active Styling */
+.nextra-toc a {
+  transition: color 0.2s ease;
+}
+
+.nextra-toc a:hover {
+  color: #111111 !important;
+}
+
+:root[class~="dark"] .nextra-toc a:hover {
+  color: #ffffff !important;
+}
+
+.nextra-toc li > a.nx-text-primary-600 {
+  color: #ffc10f !important; /* Use Gold for active TOC items for a professional accent */
+  font-weight: 600;
+}
+
+/* Hide Nextra Breadcrumbs */
+.nextra-breadcrumb,
+.nx-mt-1.nx-flex.nx-flex-wrap.nx-items-center.nx-gap-1.nx-text-sm.nx-text-gray-500 {
+  display: none !important;
+}
+
+/* Sidebar Icons spacing */
+.nextra-sidebar-container .nx-flex.nx-items-center.nx-gap-2 {
+  gap: 12px !important;
+}
+
 
 /* Prevent logo area from having any hover effects on text */
 .logo-container, 
@@ -56,7 +207,7 @@ a:has(.logo-container):hover img {
 }
 
 .custom-theme-switch:hover {
-  background-color: rgba(140, 24, 28, 0.1) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 :root[class~="dark"] .custom-theme-switch:hover {
@@ -70,23 +221,30 @@ a:has(.logo-container):hover img {
 /* Add custom gold styling for important buttons or callouts */
 .gold-button {
   background-color: #ffc10f;
-  color: #8C181C;
+  color: #111111;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 8px 20px;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+}
+
+.gold-button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
 }
 
 .logo-text {
   font-family: var(--font-poppins), sans-serif;
 }
 
-/* Custom NProgress styling - Matches plsDonate Red */
+/* Custom NProgress styling - Matches plsDonate Gold */
 #nprogress .bar {
-  background: #8C181C !important;
+  background: #ffc10f !important;
   height: 3px !important;
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px #8C181C, 0 0 5px #8C181C !important;
+  box-shadow: 0 0 10px #ffc10f, 0 0 5px #ffc10f !important;
 }
 
 /* 404 Page Styles */
@@ -115,7 +273,7 @@ a:has(.logo-container):hover img {
   font-weight: 800;
   line-height: 1;
   margin: 0;
-  background: linear-gradient(135deg, #8C181C, #C0392B);
+  background: linear-gradient(135deg, #333333, #111111);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

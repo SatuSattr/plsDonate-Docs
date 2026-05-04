@@ -1,5 +1,7 @@
 {
-  "index": "Introduction",
-  "express": "plsDonate Express",
-  "full": "plsDonate"
+  "index": "Home",
+  "getting-started": "Getting Started",
+  "configuration": "Configuration",
+  "commands": "Commands",
+  "api": "API Reference"
 }

@@ -1,7 +1,5 @@
 # Configuration
 
-import { Callout } from 'nextra/components'
-
 After installing plsDonate Express and starting your server, a `config.yml` file will be generated at:
 
 ```
